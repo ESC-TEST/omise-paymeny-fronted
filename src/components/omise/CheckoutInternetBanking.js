@@ -31,7 +31,13 @@ function CheckoutInternetBanking() {
       frameDescription: 'Invoice #3847',
       amount: 10000,
       onCreateTokenSuccess: token => {
-        internetBanking(token, 'test@email.com', 1000, 'keng');
+        internetBanking(token, 'test@email.com', 1000, 'keng')
+          .then(response => {
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
         console.log(token);
       },
       onFormClosed: () => {}

@@ -6,11 +6,11 @@ function CheckoutPromptpay() {
   const handleClick = e => {
     e.preventDefault();
     promptpay(1000)
-      .then((res, req) => {
-        console.log(res, req);
+      .then(response => {
+        console.log(response.data);
       })
-      .then((res, req) => {
-        console.log(res, req);
+      .catch(error => {
+        console.error(error);
       });
   };
 

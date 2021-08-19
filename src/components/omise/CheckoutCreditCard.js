@@ -31,11 +31,11 @@ function CheckoutCreditCard() {
       amount: 10000,
       onCreateTokenSuccess: token => {
         cardCreate(token, 'test@email.com', 1000, 'keng')
-          .then((res, req) => {
-            console.log(res, req);
+          .then(response => {
+            console.log(response.data);
           })
-          .then((res, req) => {
-            console.log(res, req);
+          .catch(error => {
+            console.error(error);
           });
         console.log(token);
       },
